@@ -564,6 +564,18 @@ ul.social-icons > li {
 .contentpane:not(.com-sppagebuilder) {
   padding: 20px;
 }
+#modalWrap{padding:0;}
+#modalWrap .modalHeader{width:100%;background:#f6f6f6;border-bottom:1px solid #f1f1f0;height:65px;padding:15px;margin-bottom:15px;box-sizing:border-box;-moz-box-sizing:border-box;}
+#modalWrap .modalHeader h2{margin:0;color:#555;font-size:140%; margin-top:-8px;}
+#modalWrap .modalHeader h2::before {font-family: FontAwesome;content: "\f00c";font-weight: normal;margin-right: 8px; color:#32CD32; font-size:28px;}
+#modalWrap .modalHeader p.headerSub{margin:0 0 0 20px;padding:0;color:#6b6b6b;font-style:italic;}
+#modalWrap .modalHeader p.headerSub.bigger{margin-left:25px!important;}
+.wf-mediabox-container{ 
+  padding:0px!important;
+}
+.modalPadding{
+  padding:21px;
+}
 #sp-bottom {
   padding: 60px 0 30px;
   font-size: 14px;
