@@ -24,10 +24,10 @@ class HelixUltimateFeatureFooter
 		if($this->params->get('enabled_copyright'))
 		{
 			$output = '';
-			
+
 			if($this->params->get('copyright'))
 			{
-				$output .= '<span class="sp-copyright">' . str_ireplace('{year}',date('Y'), str_ireplace('joomshaper', '<a target="_blank" href="https://www.joomshaper.com">JoomShaper</a>', $this->params->get('copyright'))) . '</span>';
+				$output .= '<span class="sp-copyright">' . str_ireplace('{year}',date('Y'), str_ireplace('joomshaper', '<a target="_blank" href="https://www.joomshaper.com">ssssJoomShaper</a>', $this->params->get('copyright'))) . '</span>';
 			}
 
 			return $output;

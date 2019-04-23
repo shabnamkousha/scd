@@ -132,11 +132,11 @@ ul.social-icons > li a:hover {
   background: #0345bf;
 }
 #sp-footer, #sp-bottom {
-  background: #171717;
+  background: #003366;
   color: #fff;
 }
 #sp-footer a, #sp-bottom a {
-  color: #a2a2a2;
+  color: #fff;
 }
 #sp-footer a:hover, #sp-bottom a:hover, #sp-footer a:active, #sp-bottom a:active, #sp-footer a:focus, #sp-bottom a:focus {
   color: #fff;

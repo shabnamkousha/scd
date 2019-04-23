@@ -570,19 +570,19 @@ ul.social-icons > li {
 #modalWrap .modalHeader h2::before {font-family: FontAwesome;content: "\f00c";font-weight: normal;margin-right: 8px; color:#32CD32; font-size:28px;}
 #modalWrap .modalHeader p.headerSub{margin:0 0 0 20px;padding:0;color:#6b6b6b;font-style:italic;}
 #modalWrap .modalHeader p.headerSub.bigger{margin-left:25px!important;}
-.wf-mediabox-container{ 
+.wf-mediabox-container{
   padding:0px!important;
 }
 .modalPadding{
   padding:21px;
 }
 #sp-bottom {
-  padding: 60px 0 30px;
+  padding: 22px 0 0px;
   font-size: 14px;
   line-height: 1.6;
 }
 #sp-bottom .sp-module {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 #sp-bottom .sp-module .sp-module-title {
   font-weight: 700;
@@ -609,7 +609,7 @@ ul.social-icons > li {
   padding: 0;
 }
 #sp-footer .container-inner {
-  padding: 30px 0;
+  padding: 15px 0;
   border-top: 1px solid rgba(255, 255, 255, .1);
 }
 #sp-footer ul.menu {
@@ -1333,6 +1333,10 @@ body.ltr .sp-megamenu-parent .sp-dropdown.sp-dropdown-sub {
   .sp-contact-info{
     display:none;
   }
+  div#sp-bottom1, div#sp-bottom2, div#sp-bottom3, div#sp-bottom4 {
+    width: 50%;
+    float: left;
+  } 
 }
 #offcanvas-toggler {
   display: block;

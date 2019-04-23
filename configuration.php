@@ -50,7 +50,7 @@ class JConfig {
 	public $MetaTitle = '1';
 	public $MetaAuthor = '1';
 	public $MetaVersion = '0';
-	public $robots = '';
+	public $robots = 'noindex, nofollow';
 	public $sef = '1';
 	public $sef_rewrite = '1';
 	public $sef_suffix = '1';
@@ -83,7 +83,7 @@ class JConfig {
 	public $massmailoff = '0';
 	public $replyto = '';
 	public $replytoname = '';
-	public $MetaRights = '';
+	public $MetaRights = '© 2019 Copyright SmartCanDo, Inc. All rights reserved.';
 	public $sitename_pagetitles = '2';
 	public $force_ssl = '0';
 	public $session_memcache_server_host = 'localhost';
