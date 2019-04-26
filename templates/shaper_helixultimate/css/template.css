@@ -1314,7 +1314,7 @@ body.ltr .sp-megamenu-parent .sp-dropdown.sp-dropdown-sub {
     display:none;
   }
   .sp-schedule-demo{
-    display: block;
+    display: none;
     width: 150px;
     color: #fff;
     background: #F50;
@@ -1336,7 +1336,7 @@ body.ltr .sp-megamenu-parent .sp-dropdown.sp-dropdown-sub {
   div#sp-bottom1, div#sp-bottom2, div#sp-bottom3, div#sp-bottom4 {
     width: 50%;
     float: left;
-  } 
+  }
 }
 #offcanvas-toggler {
   display: block;
