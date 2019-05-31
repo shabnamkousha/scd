@@ -1296,6 +1296,157 @@ body.ltr .sp-megamenu-parent .sp-dropdown.sp-dropdown-sub {
 .sp-schedule-demo{
   display:none;
 }
+
+/*
+Price Calc
+*/
+#ex1Slider .slider-selection {
+	background: #ccc;
+}
+.slider-handle{
+  background:#6699FF;
+}
+.calcFormInput .btn-primary,.calcFormInput .sppb-btn-primary{
+  background-color: #ced4da;
+  border-color:#ced4da;
+}
+.calcFormInput .btn-primary:hover{
+  background: #808080;
+  border-color:#ced4da;
+
+}
+.tooltip.top{
+  padding: 5px 0;
+}
+.tooltip{
+  position: absolute;
+z-index: 1070;
+display: block;
+font-size: 12px;
+line-height: 1.4;
+visibility: visible;
+filter: alpha(opacity=0);
+opacity: 0;
+}
+.tooltip {
+    position: absolute;
+    z-index: 1070;
+    display: block;
+    margin: 0;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: left;
+    text-align: start;
+    text-decoration: none;
+    text-shadow: none;
+    text-transform: none;
+    letter-spacing: normal;
+    word-break: normal;
+    word-spacing: normal;
+    white-space: normal;
+    line-break: auto;
+    font-size: 11px;
+    word-wrap: break-word;
+    opacity: 0;
+  }
+.tooltip.in{
+  opacity: .9;
+}
+.tooltip-arrow{position:absolute;width:0;height:0;border-color:transparent;border-style:solid}
+.tooltip.top .tooltip-arrow{bottom:0;left:50%;margin-left:-5px;border-width:5px 5px 0;border-top-color:#000}
+
+.blindclass, .soundsysclass, .pluginclass, .seccameraclass{
+  width:224px;
+  margin-left: 10px;
+}
+.thermostatclass, .switchclass, .bulbclass, .doorbellclass{
+  width:224px;
+}
+
+.calcFormInput .input-group-text{
+  font-size:13px!important;
+}
+.calcFormInput{
+  float:left;
+}
+.price-calc-wrapper{
+  width:90%;
+  margin-bottom: 14px;
+  height:40px;
+  margin-left:5%;
+}
+.priceCalcLbl{
+  font-size:14px;
+  margin-bottom:5px;
+  margin-left: -9px
+}
+.packageLvl{
+  margin-top:-1px;
+  width:250px;
+  padding-left:9px;
+}
+.slider.slider-horizontal{
+  width:223px;
+}
+.price-calc-wrapper .input-group-text{
+  width:115px;
+  display:block;
+  text-align: center;
+  padding:9px;
+}
+.priceBox{
+    border: 1px solid #ccc;
+    width: 340px;
+    padding-left: 10px;
+    margin-top: 25px;
+    border-radius: .25rem;
+    min-height:100%;
+    font-size:16px;
+    overflow:auto;
+}
+#rooms:focus, #diningroom:focus, #washrooms:focus, #balconies:focus,#entrancedoor:focus{
+    border-color: #cccccc!important;
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+}
+input[readonly] {
+    background-color: #fff!important;
+}
+.priceBoxLbl, .priceBoxVal{
+  display:block;
+  margin-top:10px;
+}
+.priceBoxTxt{
+  display:block;
+  margin-top: 5px;
+  margin-bottom:10px;
+
+}
+.priceBoxVal{
+  margin-left:5px;
+}
+.priceCalcTitle{
+  width:90%;
+  font-weight: bold;
+  margin-bottom:12px;
+  margin-left: 5%;
+  font-size: 17px;
+}
+.priceSubTitle{
+  font-weight: normal;
+  margin-bottom:12px;
+  font-size: 13px;
+}
+.priceBoxTxt{
+  font-size: 10px;
+  font-weight: normal;
+  width:100%;
+}
+/*
+End of Price Calc
+*/
 @media (min-width: 576px) {
   .sp-menu-full.container {
     width: 540px;

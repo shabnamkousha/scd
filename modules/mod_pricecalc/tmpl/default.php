@@ -8,234 +8,147 @@ defined('_JEXEC') or die; ?>
     <link href="/templates/shaper_helixultimate/js/test.css" rel="stylesheet">
     <link href="http://seiyria.com/bootstrap-slider/css/bootstrap-slider.css" rel="stylesheet">
 
-<style>
-#ex1Slider .slider-selection {
-	background: #ccc;
-}
-.slider-handle{
-  background:#6699FF;
-}
-.calcFormInput .btn-primary,.calcFormInput .sppb-btn-primary{
-  background-color: #ced4da;
-  border-color:#ced4da;
-}
-.calcFormInput .btn-primary:hover{
-  background: #808080;
-  border-color:#ced4da;
-
-}
-.tooltip.top{
-  padding: 5px 0;
-}
-.tooltip{
-  position: absolute;
-z-index: 1070;
-display: block;
-font-size: 12px;
-line-height: 1.4;
-visibility: visible;
-filter: alpha(opacity=0);
-opacity: 0;
-}
-.tooltip {
-    position: absolute;
-    z-index: 1070;
-    display: block;
-    margin: 0;
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1.5;
-    text-align: left;
-    text-align: start;
-    text-decoration: none;
-    text-shadow: none;
-    text-transform: none;
-    letter-spacing: normal;
-    word-break: normal;
-    word-spacing: normal;
-    white-space: normal;
-    line-break: auto;
-    font-size: 11px;
-    word-wrap: break-word;
-    opacity: 0;
-  }
-.tooltip.in{
-  opacity: .9;
-}
-.tooltip-arrow{position:absolute;width:0;height:0;border-color:transparent;border-style:solid}
-.tooltip.top .tooltip-arrow{bottom:0;left:50%;margin-left:-5px;border-width:5px 5px 0;border-top-color:#000}
-
-.roomclass{
-  width:220px;
-}
-.washroomclass{
-  width:220px;
-  margin-left: 10px;
-}
-.diningroomclass{
-  width:220px;
-}
-.entrancedoorclass{
-  width:220px;
-}
-.balconiesclass{
-  width:220px;
-  margin-left: 10px;
-}
-.calcFormInput .input-group-text{
-  font-size:13px!important;
-}
-.calcFormInput{
-  float:left;
-}
-.price-calc-wrapper{
-  width:90%;
-  margin-bottom: 14px;
-  height:40px;
-  margin-left:5%;
-}
-.priceCalcLbl{
-  font-size:14px;
-}
-.packageLvl{
-  margin-top:-1px;
-  width:223px;
-  padding-left:3px;
-}
-.slider.slider-horizontal{
-  width:223px;
-}
-.price-calc-wrapper .input-group-text{
-  width:115px;
-  display:block;
-  text-align: center;
-  padding:9px;
-}
-.priceBox{
-    border: 1px solid #ccc;
-    width: 220px;
-    padding-left: 10px;
-    margin-top: 25px;
-    border-radius: .25rem;
-    min-height:100%;
-    font-size:14px;
-    display: flex;
-}
-#rooms:focus, #diningroom:focus, #washrooms:focus, #balconies:focus,#entrancedoor:focus{
-    border-color: #cccccc!important;
-    -webkit-box-shadow: none!important;
-    box-shadow: none!important;
-}
-input[readonly] {
-    background-color: #fff!important;
-}
-.priceBoxLbl, .priceBoxVal{
-  display:block;
-  margin-top:10px;
-  margin-bottom:10px;
-}
-.priceBoxVal{
-  margin-left:5px;
-}
-.priceCalcTitle{
-  width:90%;
-  font-weight: bold;
-  margin-bottom:12px;
-  margin-left: 5%;
-  font-size: 17px;
-}
-</style>
         <div class="priceCalcTitle">
           Smart Home Price Calculator
+          <div class="priceSubTitle">
+            Monitor and control your appliances by voice or using one mobile application!
+          </div>
         </div>
         <div class="price-calc-wrapper">
-          <div class="calcFormInput roomclass numberSpinner">
-            <input readonly id="rooms" type="text" value="0" name="rooms">
+          <div class="calcFormInput bulbclass numberSpinner">
+            <input readonly id="bulbs" type="text" value="0" name="bulbs">
           </div>
-          <div class="calcFormInput washroomclass float-right numberSpinner">
-            <input readonly id="washrooms" type="text" value="0" name="washrooms">
+          <div class="calcFormInput blindclass float-left float-sm-right float-md-right float-lg-right numberSpinner">
+            <input readonly id="blinds" type="text" value="0" name="blind">
           </div>
       </div>
       <div class="price-calc-wrapper">
-        <div class="calcFormInput diningroomclass numberSpinner">
-          <input readonly id="diningroom" type="text" value="0" name="diningroom">
+        <div class="calcFormInput thermostatclass numberSpinner">
+          <input readonly id="thermostat" type="text" value="0" name="thermostat">
         </div>
-        <div class="calcFormInput balconiesclass float-right numberSpinner">
-          <input readonly id="balconies" type="text" value="0" name="balconies">
+        <div class="calcFormInput soundsysclass float-left float-sm-right float-md-right float-lg-right numberSpinner">
+          <input readonly id="soundsys" type="text" value="0" name="soundsys">
         </div>
       </div>
       <div class="price-calc-wrapper">
-        <div class="calcFormInput entrancedoorclass numberSpinner">
-          <input readonly id="entrancedoor" type="text" value="0" name="entrancedoor">
+        <div class="calcFormInput switchclass numberSpinner">
+          <input readonly id="switch" type="text" value="0" name="switch">
         </div>
-
-        <div class="calcFormInput packageLvl float-right">
-          <div class="priceCalcLbl">Type of package
-          <a href="/smart-home-packages-description" target="_blank" class="readon jcepopup" data-mediabox-width="610" data-mediabox-height="500" type="text/html" rel=""> (?)</a></div>
-          <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="11" data-slider-step="1" data-slider-value="0"/>
+        <div class="calcFormInput pluginclass float-left float-sm-right float-md-right float-lg-right numberSpinner">
+          <input readonly id="plugin" type="text" value="0" name="plugin">
+        </div>
+      </div>
+      <div class="price-calc-wrapper">
+        <div class="calcFormInput doorbellclass numberSpinner">
+          <input readonly id="doorbell" type="text" value="0" name="doorbell">
+        </div>
+        <div class="calcFormInput seccameraclass float-left float-sm-right float-md-right float-lg-right numberSpinner">
+          <input readonly id="seccamera" type="text" value="0" name="seccamera">
+        </div>
+      </div>
+      <div class="price-calc-wrapper">
+        <div class="calcFormInput packageLvl">
+          <div class="priceCalcLbl">How techy is your home?
+          <a href="/smart-home-techy-level-description" target="_blank" class="readon jcepopup" data-mediabox-width="610" data-mediabox-height="500" type="text/html" rel=""> (?)</a></div>
+          <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="6" data-slider-step="3" data-slider-value="0"/>
         </div>
       </div>
       <div class="price-calc-wrapper">
         <div class="priceBox">
-          <div class="float-left priceBoxLbl"><b>Price starting from</b></div> <div class="float-left priceBoxVal" id="exactPriceVal">...</div>
+          <div style="width:100%">
+            <div class="float-left priceBoxLbl"><b>Price starting from</b></div> <div class="float-left priceBoxVal" id="exactPriceVal">...</div>
+          </div>
+          <div class="float-left priceBoxTxt">*Installation and Google home or Alexa device price is included.</div>
         </div>
       </div>
 
 
         <script>
-            jQuery("input[name='rooms']").TouchSpin({
+            jQuery("input[name='bulbs']").TouchSpin({
                 min: 0,
-                max: 9,
+                max: 25,
                 step: 1,
                 decimals: 0,
                 boostat: 5,
                 maxboostedstep: 10,
-                prefix: 'Bedrooms'
+                prefix: 'Light Bulbs'
             });
         </script>
         <script>
-            jQuery("input[name='washrooms']").TouchSpin({
+            jQuery("input[name='blind']").TouchSpin({
+                min: 0,
+                max: 25,
+                step: 1,
+                decimals: 0,
+                boostat: 5,
+                maxboostedstep: 10,
+                prefix: 'Shade / Blind'
+            });
+        </script>
+        <script>
+            jQuery("input[name='thermostat']").TouchSpin({
                 min: 0,
                 max: 5,
                 step: 1,
                 decimals: 0,
                 boostat: 5,
                 maxboostedstep: 10,
-                prefix: 'Bathrooms'
+                prefix: 'Thermostat'
             });
         </script>
         <script>
-            jQuery("input[name='diningroom']").TouchSpin({
+            jQuery("input[name='switch']").TouchSpin({
+                min: 0,
+                max: 50,
+                step: 1,
+                decimals: 0,
+                boostat: 5,
+                maxboostedstep: 10,
+                prefix: 'Switch'
+            });
+        </script>
+        <script>
+            jQuery("input[name='plugin']").TouchSpin({
+                min: 0,
+                max: 50,
+                step: 1,
+                decimals: 0,
+                boostat: 5,
+                maxboostedstep: 10,
+                prefix: 'Plugin Outlet'
+            });
+        </script>
+        <script>
+            jQuery("input[name='soundsys']").TouchSpin({
                 min: 0,
                 max: 5,
                 step: 1,
                 decimals: 0,
                 boostat: 5,
                 maxboostedstep: 10,
-                prefix: 'Dining Rooms'
+                prefix: 'Entertainment'
             });
         </script>
         <script>
-            jQuery("input[name='entrancedoor']").TouchSpin({
+            jQuery("input[name='seccamera']").TouchSpin({
                 min: 0,
                 max: 5,
                 step: 1,
                 decimals: 0,
                 boostat: 5,
                 maxboostedstep: 10,
-                prefix: 'Entrance Doors'
+                prefix: 'Security Camera'
             });
         </script>
         <script>
-            jQuery("input[name='balconies']").TouchSpin({
+            jQuery("input[name='doorbell']").TouchSpin({
                 min: 0,
                 max: 5,
                 step: 1,
                 decimals: 0,
                 boostat: 5,
                 maxboostedstep: 10,
-                prefix: 'Balconies'
+                prefix: 'Door Bell'
             });
         </script>
 
@@ -246,16 +159,22 @@ input[readonly] {
 <script>
 packageLVL=0;
 roomNum=0;
+doorBellNum=0;
 diningNum=0
 balconyNum=0;
 enteranceNum=0;
-bathroomNum=0;
+blindNum=0;
+pluginNum=0;
+secCameraNum=0
 calculatedPrice=0;
 pricePerRoom=1000;
 pricePerDining=2000;
 pricePerEntrance=500;
-pricePerBathroom=700;
+pricePerBlind=700;
 pricePerBalcony=200;
+pricePerPlugin=100;
+pricePerDoorBell=100;
+pricePerSecCamera=90;
 // With JQuery
 jQuery('#ex1').slider({
 	formatter: function(value) {
@@ -265,28 +184,23 @@ jQuery('#ex1').slider({
       //jQuery(slider-selection).css("background-color":"#000");
       jQuery('.slider-handle').css({"background":"#6699FF"});
       jQuery('.slider-selection').css({"background":"#6699FF"});
-      packagename="cool";
+      packagename="Not at All";
     }
-    if(3<=value && value<6){
+    if(3==value){
       //jQuery(slider-selection).css("background-color":"#000");
       jQuery('.slider-handle').css({"background":"#F18B53"});
       jQuery('.slider-selection').css({"background":"#F18B53"});
-      packagename="comfort";
+      packagename="Somewhat";
     }
-    if(6<=value && value<9){
-      //jQuery(slider-selection).css("background-color":"#000");
-      jQuery('.slider-handle').css({"background":"#7851a9"});
-      jQuery('.slider-selection').css({"background":"#7851a9"});
-      packagename="Plus";
-    }
-    if(9<=value && value<=11){
+
+    if(6==value){
       //jQuery(slider-selection).css("background-color":"#000");
       jQuery('.slider-handle').css({"background":"#D4AF37"});
       jQuery('.slider-selection').css({"background":"#D4AF37"});
-      packagename="Premium";
+      packagename="To a Great Extent";
     }
     calculatedPrice=calcFinalPrice();
-		return 'Package level: ' + packagename;
+		return '' + packagename;
 	}
 });
 
@@ -297,29 +211,40 @@ jQuery('input').keydown(function(e) {
 
 
 
-jQuery(".roomclass").on("click", function () {
-    roomNum = jQuery('#rooms').val();
+jQuery(".bulbclass").on("click", function () {
+    roomNum = jQuery('#bulbs').val();
     calculatedPrice=calcFinalPrice();
 });
-jQuery(".washroomclass").on("click", function () {
-    bathroomNum = jQuery('#washrooms').val();
+jQuery(".blindclass").on("click", function () {
+    blindNum = jQuery('#blinds').val();
     calculatedPrice=calcFinalPrice();
 });
-jQuery(".balconiesclass").on("click", function () {
-    balconyNum = jQuery('#balconies').val();
+jQuery(".pluginclass").on("click", function () {
+    pluginNum = jQuery('#plugin').val();
     calculatedPrice=calcFinalPrice();
 });
-jQuery(".diningroomclass").on("click", function () {
-    diningNum = jQuery('#diningroom').val();
+jQuery(".soundsysclass").on("click", function () {
+    balconyNum = jQuery('#soundsys').val();
     calculatedPrice=calcFinalPrice();
 });
-jQuery(".entrancedoorclass").on("click", function () {
-    enteranceNum = jQuery('#entrancedoor').val();
+jQuery(".thermostatclass").on("click", function () {
+    diningNum = jQuery('#thermostat').val();
     calculatedPrice=calcFinalPrice();
 });
-
+jQuery(".switchclass").on("click", function () {
+    enteranceNum = jQuery('#switch').val();
+    calculatedPrice=calcFinalPrice();
+});
+jQuery(".seccameraclass").on("click", function () {
+    secCameraNum = jQuery('#seccamera').val();
+    calculatedPrice=calcFinalPrice();
+});
+jQuery(".doorbellclass").on("click", function () {
+    doorBellNum = jQuery('#doorbell').val();
+    calculatedPrice=calcFinalPrice();
+});
 function calcFinalPrice(){
-  finalVal=(roomNum*pricePerRoom+diningNum*pricePerDining+balconyNum*pricePerBalcony+enteranceNum*pricePerEntrance+bathroomNum*pricePerBathroom)*(packageLVL+1);
+  finalVal=(pricePerDoorBell*doorBellNum+pricePerSecCamera*secCameraNum+pricePerPlugin*pluginNum+roomNum*pricePerRoom+diningNum*pricePerDining+balconyNum*pricePerBalcony+enteranceNum*pricePerEntrance+blindNum*pricePerBlind)*(packageLVL+1);
   if (finalVal==0){
     jQuery("#exactPriceVal").text('...');
   } else {
