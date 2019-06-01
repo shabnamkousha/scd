@@ -1357,11 +1357,11 @@ opacity: 0;
 .tooltip-arrow{position:absolute;width:0;height:0;border-color:transparent;border-style:solid}
 .tooltip.top .tooltip-arrow{bottom:0;left:50%;margin-left:-5px;border-width:5px 5px 0;border-top-color:#000}
 
-.blindclass, .soundsysclass, .pluginclass, .seccameraclass{
+.blindclass, .soundsysclass, .pluginclass, .seccameraclass, .smartbedclass, .smartbathroomclass{
   width:224px;
   margin-left: 10px;
 }
-.thermostatclass, .switchclass, .bulbclass, .doorbellclass{
+.thermostatclass, .switchclass, .bulbclass, .doorbellclass, .smartmirrorclass, .smartkitchenclass{
   width:224px;
 }
 
@@ -1380,15 +1380,35 @@ opacity: 0;
 .priceCalcLbl{
   font-size:14px;
   margin-bottom:5px;
-  margin-left: -9px
 }
-.packageLvl{
+.techyLVL{
   margin-top:-1px;
   width:250px;
-  padding-left:9px;
+}
+#showMoreBoxId{
+  display:none;
+}
+#showMoreBtn {
+    border: 1px solid #e9ecef;
+    padding-top: 5px;
+    padding-left:10px;
+    padding-bottom:5px;
+    padding-right: 10px;
+    text-align:center;
+    background: #e9ecef;
+    border-radius: .25rem;
+    font-weight: bold;
+    font-size:13px;
+    width: 50%;
+    margin: 0 auto;
+    cursor: pointer;
 }
 .slider.slider-horizontal{
   width:223px;
+}
+.showMoreWrapper{
+  margin-bottom: 2px;
+  margin-top: 18px;
 }
 .price-calc-wrapper .input-group-text{
   width:115px;
@@ -1396,6 +1416,7 @@ opacity: 0;
   text-align: center;
   padding:9px;
 }
+
 .priceBox{
     border: 1px solid #ccc;
     width: 340px;
