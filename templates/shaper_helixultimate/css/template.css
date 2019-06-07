@@ -1372,18 +1372,42 @@ opacity: 0;
   float:left;
 }
 .price-calc-wrapper{
-  width:90%;
+  width:96%;
   margin-bottom: 14px;
   height:40px;
-  margin-left:5%;
+  margin-left:3%;
+}
+.claimDiscountActionBtn{
+  background-color: #f50 !important;
+  margin-top: 0;
+  padding: 6px 12px;
+  border-radius: 2px !important;
+  border: none !important;
+  display: block;
+  width: auto;
+  color:#fff;
+  font-weight:bold;
+  cursor: pointer;
+  margin-top:39px;
+}
+.claimDiscountActionBtn:hover{
+  color:#fff;
+  background:#ED4300 !important;
+  cursor: pointer;
 }
 .priceCalcLbl{
   font-size:14px;
   margin-bottom:5px;
 }
 .techyLVL{
-  margin-top:-1px;
-  width:250px;
+  margin-top:6px;
+  width:100%;
+}
+#selectedTechyLvl{
+  margin-left: 14px;
+  font-weight: bold;
+  float: left;
+  font-size: 13px;
 }
 #showMoreBoxId{
   display:none;
@@ -1405,6 +1429,7 @@ opacity: 0;
 }
 .slider.slider-horizontal{
   width:223px;
+  float: left;
 }
 .showMoreWrapper{
   margin-bottom: 2px;
@@ -1418,9 +1443,7 @@ opacity: 0;
 }
 
 .priceBox{
-    border: 1px solid #ccc;
-    width: 340px;
-    padding-left: 10px;
+    width: auto;
     margin-top: 25px;
     border-radius: .25rem;
     min-height:100%;

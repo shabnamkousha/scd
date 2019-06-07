@@ -71,15 +71,18 @@ defined('_JEXEC') or die; ?>
         <div class="calcFormInput techyLVL">
           <div class="priceCalcLbl">How techy is your home?
           <a href="/smart-home-techy-level-description" target="_blank" class="readon jcepopup" data-mediabox-width="610" data-mediabox-height="500" type="text/html" rel=""> (i)</a></div>
-          <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="6" data-slider-step="3" data-slider-value="0"/>
+          <input  id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="6" data-slider-step="3" data-slider-value="0"/> <div id="selectedTechyLvl">Not at All</div>
         </div>
       </div>
       <div class="price-calc-wrapper">
-        <div class="priceBox">
+        <div class="priceBox float-left">
           <div style="width:100%">
             <div class="float-left priceBoxLbl"><b>Price starting from</b></div> <div class="float-left priceBoxVal" id="exactPriceVal">...</div>
           </div>
           <div class="float-left priceBoxTxt">*Installation and Google home or Alexa device price is included.</div>
+        </div>
+        <div class="float-left float-sm-right float-md-right float-lg-right">
+          <a class="claimDiscountActionBtn" href="">Claim 10% Discount</a>
         </div>
       </div>
 
@@ -92,7 +95,7 @@ defined('_JEXEC') or die; ?>
                 decimals: 0,
                 boostat: 5,
                 maxboostedstep: 10,
-                prefix: 'Light Bulbs'
+                prefix: 'Light Bulb'
             });
         </script>
         <script>
@@ -125,7 +128,7 @@ defined('_JEXEC') or die; ?>
                 decimals: 0,
                 boostat: 5,
                 maxboostedstep: 10,
-                prefix: 'Switch'
+                prefix: 'Door Lock'
             });
         </script>
         <script>
@@ -136,7 +139,7 @@ defined('_JEXEC') or die; ?>
                 decimals: 0,
                 boostat: 5,
                 maxboostedstep: 10,
-                prefix: 'Plugin Outlet'
+                prefix: 'Outlet Plugin'
             });
         </script>
         <script>
@@ -237,7 +240,7 @@ secCameraNum=0
 calculatedPrice=0;
 pricePerBulb=45;
 pricePerThermostat=200;
-pricePerSwitch=47;
+pricePerSwitch=45;
 pricePerBlind=1000;
 pricePerSoundSys=500;
 pricePerPlugin=45;
@@ -257,19 +260,28 @@ jQuery('#ex1').slider({
       jQuery('.slider-handle').css({"background":"#6699FF"});
       jQuery('.slider-selection').css({"background":"#6699FF"});
       packagename="Not at All";
+      jQuery("#selectedTechyLvl").text("Not at All");
+      jQuery('#selectedTechyLvl').css({"color":"#6699FF"});
+
     }
     if(3==value){
       //jQuery(slider-selection).css("background-color":"#000");
-      jQuery('.slider-handle').css({"background":"#F18B53"});
-      jQuery('.slider-selection').css({"background":"#F18B53"});
+      jQuery('.slider-handle').css({"background":"#F0E68C"});
+      jQuery('.slider-selection').css({"background":"#F0E68C"});
       packagename="Somewhat";
+      jQuery("#selectedTechyLvl").text("Somewhat");
+      jQuery('#selectedTechyLvl').css({"color":"#F0E68C"});
+
     }
 
     if(6==value){
       //jQuery(slider-selection).css("background-color":"#000");
-      jQuery('.slider-handle').css({"background":"#D4AF37"});
-      jQuery('.slider-selection').css({"background":"#D4AF37"});
+      jQuery('.slider-handle').css({"background":"#377E22"});
+      jQuery('.slider-selection').css({"background":"#377E22"});
       packagename="To a Great Extent";
+      jQuery("#selectedTechyLvl").text("To a Great Extent");
+      jQuery('#selectedTechyLvl').css({"color":"#377E22"});
+
     }
     calculatedPrice=calcFinalPrice();
 		return '' + packagename;
@@ -346,15 +358,15 @@ jQuery("#showMoreBtn").on("click", function () {
 function calcFinalPrice(){
   finalVal=(pricePerBath*bathNum+pricePerKitchen*kitchenNum+pricePerBed*bedNum+mirrorNum*pricePerMirror+pricePerDoorBell*doorBellNum+pricePerSecCamera*secCameraNum+pricePerPlugin*pluginNum+bulbNum*pricePerBulb+thermostatNum*pricePerThermostat+soundsysNum*pricePerSoundSys+pricePerSwitch*switchNum+blindNum*pricePerBlind);
   if(techyLVL==3){
-    finalVal=finalVal*50%;
-  } elseif (techyLVL==6){
-    finalVal=finalVal*70%;
+    finalVal=finalVal*.5;
+  } else if (techyLVL==6){
+    finalVal=finalVal*.3;
   }
 
   if (finalVal==0){
     jQuery("#exactPriceVal").text('...');
   } else {
-  jQuery("#exactPriceVal").text('$'.concat(finalVal));
+  jQuery("#exactPriceVal").text('$'.concat(Math.round(finalVal)));
   }
   return finalVal;
 }
