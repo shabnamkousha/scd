@@ -9,9 +9,9 @@ defined('_JEXEC') or die; ?>
     <link href="http://seiyria.com/bootstrap-slider/css/bootstrap-slider.css" rel="stylesheet">
 
         <div class="priceCalcTitle">
-          Smart Home Price Calculator
+          Smart Home Price Calculator<a style="font-size:14px;" href="/smart-home-techy-level-description" target="_blank" class="readon jcepopup" data-mediabox-width="610" data-mediabox-height="500" type="text/html" rel=""> (i)</a>
           <div class="priceSubTitle">
-            Monitor and control your appliances by voice or using one mobile application!
+            Estimated prices include a consultation, installation and a Google Home or Alexa.
           </div>
         </div>
         <div class="price-calc-wrapper">
@@ -79,9 +79,8 @@ defined('_JEXEC') or die; ?>
           <div style="width:100%">
             <div class="float-left priceBoxLbl"><b>Price starting from</b></div> <div class="float-left priceBoxVal" id="exactPriceVal">...</div>
           </div>
-          <div class="float-left priceBoxTxt">*Installation and Google home or Alexa device price is included.</div>
         </div>
-        <div class="float-left float-sm-right float-md-right float-lg-right">
+        <div class="float-right">
           <a class="claimDiscountActionBtn" href="">Claim 10% Discount</a>
         </div>
       </div>
@@ -139,7 +138,7 @@ defined('_JEXEC') or die; ?>
                 decimals: 0,
                 boostat: 5,
                 maxboostedstep: 10,
-                prefix: 'Outlet Plugin'
+                prefix: 'Washer / Dryer'
             });
         </script>
         <script>
@@ -219,9 +218,6 @@ defined('_JEXEC') or die; ?>
                 prefix: 'Smart Bathroom'
             });
         </script>
-<br>
-
-<br>
 
 <script>
 techyLVL=0;

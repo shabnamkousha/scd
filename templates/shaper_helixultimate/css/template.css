@@ -1379,7 +1379,7 @@ opacity: 0;
 }
 .claimDiscountActionBtn{
   background-color: #f50 !important;
-  margin-top: 0;
+  margin-top: 15px!important;
   padding: 6px 12px;
   border-radius: 2px !important;
   border: none !important;
@@ -1388,7 +1388,7 @@ opacity: 0;
   color:#fff;
   font-weight:bold;
   cursor: pointer;
-  margin-top:39px;
+  font-size:13px;
 }
 .claimDiscountActionBtn:hover{
   color:#fff;
@@ -1444,7 +1444,7 @@ opacity: 0;
 
 .priceBox{
     width: auto;
-    margin-top: 25px;
+    margin-top: 10px;
     border-radius: .25rem;
     min-height:100%;
     font-size:16px;
@@ -1481,7 +1481,7 @@ input[readonly] {
 .priceSubTitle{
   font-weight: normal;
   margin-bottom:12px;
-  font-size: 13px;
+  font-size: 12px;
 }
 .priceBoxTxt{
   font-size: 10px;
