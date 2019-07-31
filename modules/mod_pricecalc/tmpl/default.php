@@ -81,7 +81,7 @@ defined('_JEXEC') or die; ?>
           </div>
         </div>
         <div class="float-right">
-          <a class="claimDiscountActionBtn" href="">Claim 10% Discount</a>
+          <a class="claimDiscountActionBtn readon jcepopup" href="/claim-discount-code-form-modal" target="_blank" data-mediabox-width="610" data-mediabox-height="500">Claim 10% Discount</a>
         </div>
       </div>
 
@@ -366,4 +366,6 @@ function calcFinalPrice(){
   }
   return finalVal;
 }
+
+
 </script>

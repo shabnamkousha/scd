@@ -183,7 +183,7 @@ ul.social-icons > li {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 #sp-main-body {
-  padding: 100px 0;
+  padding: 40px 0;
 }
 .com-sppagebuilder #sp-main-body {
   padding: 0;
@@ -809,6 +809,9 @@ table.category thead > tr th, table.category tbody > tr th, table.category thead
   border-radius: 3px;
   z-index: 1000;
 }
+.sp-page-builder .page-content #section-id-1563837704627{
+  padding: 10px 0px 10px 0px!important;
+}
 .sp-scroll-up:hover, .sp-scroll-up:active, .sp-scroll-up:focus {
   color: #fff;
   background: #444;
@@ -1296,6 +1299,9 @@ body.ltr .sp-megamenu-parent .sp-dropdown.sp-dropdown-sub {
 .sp-schedule-demo{
   display:none;
 }
+.clear {
+    clear: both;
+}
 
 /*
 Price Calc
@@ -1390,11 +1396,23 @@ opacity: 0;
   cursor: pointer;
   font-size:13px;
 }
-.claimDiscountActionBtn:hover{
+.comPriceCalc .claimDiscountActionBtn{
+  margin-top:0px!important;
+}
+.claimEmailWrapper{
+  margin-left: 20px
+}
+.claimEmailWrapper #claimEmail{
+  height:31px;
+  width:350px;
+  border-radius:2px!important;
+}
+.claimDiscountActionBtn:hover, .claimDiscountActionBtn:focus{
   color:#fff;
   background:#ED4300 !important;
   cursor: pointer;
 }
+
 .priceCalcLbl{
   font-size:14px;
   margin-bottom:5px;
@@ -1471,12 +1489,24 @@ input[readonly] {
 .priceBoxVal{
   margin-left:5px;
 }
+
+.comPriceCalc{
+  width:600px;
+  margin: 0 auto;
+}
+.comPriceCalc .price-calc-wrapper{
+  margin-left: 0px;
+}
+
 .priceCalcTitle{
   width:90%;
   font-weight: bold;
   margin-bottom:12px;
-  margin-left: 5%;
   font-size: 17px;
+}
+.comPriceCalc .priceCalcTitle{
+  width:100%;
+  margin-bottom:20px;
 }
 .priceSubTitle{
   font-weight: normal;
