@@ -31,11 +31,11 @@ defined('_JEXEC') or die; ?>
         </div>
       </div>
       <div class="price-calc-wrapper">
-        <div class="calcFormInput switchclass numberSpinner">
+        <div class="calcFormInput doorbellclass numberSpinner">
           <input readonly id="switch" type="text" value="0" name="switch">
         </div>
-        <div class="calcFormInput pluginclass float-left float-sm-right float-md-right float-lg-right numberSpinner">
-          <input readonly id="plugin" type="text" value="0" name="plugin">
+        <div class="calcFormInput seccameraclass float-left float-sm-right float-md-right float-lg-right numberSpinner">
+          <input readonly id="seccamera" type="text" value="0" name="seccamera">
         </div>
       </div>
       <div id="showMoreBoxId" class="showMoreBox">
@@ -43,9 +43,7 @@ defined('_JEXEC') or die; ?>
           <div class="calcFormInput doorbellclass numberSpinner">
             <input readonly id="doorbell" type="text" value="0" name="doorbell">
           </div>
-          <div class="calcFormInput seccameraclass float-left float-sm-right float-md-right float-lg-right numberSpinner">
-            <input readonly id="seccamera" type="text" value="0" name="seccamera">
-          </div>
+
         </div>
         <div class="price-calc-wrapper">
           <div class="calcFormInput smartmirrorclass numberSpinner">
@@ -120,7 +118,7 @@ defined('_JEXEC') or die; ?>
             });
         </script>
         <script>
-            jQuery("input[name='switch']").TouchSpin({
+            jQuery("input[name='doorlock']").TouchSpin({
                 min: 0,
                 max: 50,
                 step: 1,
@@ -128,17 +126,6 @@ defined('_JEXEC') or die; ?>
                 boostat: 5,
                 maxboostedstep: 10,
                 prefix: 'Door Lock'
-            });
-        </script>
-        <script>
-            jQuery("input[name='plugin']").TouchSpin({
-                min: 0,
-                max: 50,
-                step: 1,
-                decimals: 0,
-                boostat: 5,
-                maxboostedstep: 10,
-                prefix: 'Washer / Dryer'
             });
         </script>
         <script>
@@ -227,19 +214,17 @@ bedNum=0;
 doorBellNum=0;
 thermostatNum=0
 soundsysNum=0;
-switchNum=0;
+doorBellNum=0;
 blindNum=0;
-pluginNum=0;
 bathNum=0
 kitchenNum=0;
 secCameraNum=0
 calculatedPrice=0;
 pricePerBulb=45;
 pricePerThermostat=200;
-pricePerSwitch=45;
+pricePerDoorBell=45;
 pricePerBlind=1000;
 pricePerSoundSys=500;
-pricePerPlugin=45;
 pricePerDoorBell=100;
 pricePerSecCamera=90;
 pricePerMirror=400;
@@ -299,10 +284,6 @@ jQuery(".blindclass").on("click", function () {
     blindNum = jQuery('#blinds').val();
     calculatedPrice=calcFinalPrice();
 });
-jQuery(".pluginclass").on("click", function () {
-    pluginNum = jQuery('#plugin').val();
-    calculatedPrice=calcFinalPrice();
-});
 jQuery(".soundsysclass").on("click", function () {
     soundsysNum = jQuery('#soundsys').val();
     calculatedPrice=calcFinalPrice();
@@ -311,8 +292,8 @@ jQuery(".thermostatclass").on("click", function () {
     thermostatNum = jQuery('#thermostat').val();
     calculatedPrice=calcFinalPrice();
 });
-jQuery(".switchclass").on("click", function () {
-    switchNum = jQuery('#switch').val();
+jQuery(".doorbellclass").on("click", function () {
+    doorBellNum = jQuery('#doorbell').val();
     calculatedPrice=calcFinalPrice();
 });
 jQuery(".seccameraclass").on("click", function () {
@@ -352,7 +333,7 @@ jQuery("#showMoreBtn").on("click", function () {
 });
 
 function calcFinalPrice(){
-  finalVal=(pricePerBath*bathNum+pricePerKitchen*kitchenNum+pricePerBed*bedNum+mirrorNum*pricePerMirror+pricePerDoorBell*doorBellNum+pricePerSecCamera*secCameraNum+pricePerPlugin*pluginNum+bulbNum*pricePerBulb+thermostatNum*pricePerThermostat+soundsysNum*pricePerSoundSys+pricePerSwitch*switchNum+blindNum*pricePerBlind);
+  finalVal=(pricePerBath*bathNum+pricePerKitchen*kitchenNum+pricePerBed*bedNum+mirrorNum*pricePerMirror+pricePerDoorBell*doorBellNum+pricePerSecCamera*secCameraNum+bulbNum*pricePerBulb+thermostatNum*pricePerThermostat+soundsysNum*pricePerSoundSys+pricePerDoorBell*doorbellNum+blindNum*pricePerBlind);
   if(techyLVL==3){
     finalVal=finalVal*.5;
   } else if (techyLVL==6){

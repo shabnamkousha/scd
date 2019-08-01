@@ -1367,7 +1367,7 @@ opacity: 0;
   width:224px;
   margin-left: 10px;
 }
-.thermostatclass, .switchclass, .bulbclass, .doorbellclass, .smartmirrorclass, .smartkitchenclass{
+.thermostatclass, .bulbclass, .doorbellclass, .smartmirrorclass, .smartkitchenclass{
   width:224px;
 }
 
@@ -1428,7 +1428,7 @@ opacity: 0;
   font-size: 13px;
 }
 #showMoreBoxId{
-  display:none;
+  display:block;
 }
 #showMoreBtn {
     border: 1px solid #e9ecef;

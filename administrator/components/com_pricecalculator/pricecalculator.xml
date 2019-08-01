@@ -7,7 +7,7 @@
 	<author>Shab Kousha</author>
 	<authorEmail>shabnam.koosha@gmail.com</authorEmail>
 	<!--  The version string is recorded in the components table -->
-	<version>0.0.1</version>
+	<version>0.0.2</version>
 	<!-- The description is optional and defaults to the name -->
 	<description>Price Calculator</description>
 
@@ -24,6 +24,8 @@
 	<files folder="site">
 		<filename>index.html</filename>
 		<filename>pricecalculator.php</filename>
+		<filename>controller.php</filename>
+		<folder>views</folder>
 	</files>
 
 	<administration>
