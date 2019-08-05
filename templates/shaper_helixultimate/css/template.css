@@ -1463,7 +1463,7 @@ opacity: 0;
 
 .priceBox{
     width: auto;
-    margin-top: 10px;
+    margin-top: 8px;
     border-radius: .25rem;
     min-height:100%;
     font-size:16px;
@@ -1471,7 +1471,12 @@ opacity: 0;
 }
 .disclaimer{
   font-size:12px!important;
-  margin-bottom: 15px;
+  margin-bottom: 9px;
+  margin-top: 5px;
+}
+.disclaimer2{
+  font-size:12px!important;
+  margin-bottom: 13px;
 }
 #rooms:focus, #diningroom:focus, #washrooms:focus, #balconies:focus,#entrancedoor:focus{
     border-color: #cccccc!important;
