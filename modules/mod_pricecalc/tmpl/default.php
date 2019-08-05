@@ -32,44 +32,10 @@ defined('_JEXEC') or die; ?>
       </div>
       <div class="price-calc-wrapper">
         <div class="calcFormInput doorbellclass numberSpinner">
-          <input readonly id="switch" type="text" value="0" name="switch">
+          <input readonly id="doorbell" type="text" value="0" name="doorbell">
         </div>
         <div class="calcFormInput seccameraclass float-left float-sm-right float-md-right float-lg-right numberSpinner">
           <input readonly id="seccamera" type="text" value="0" name="seccamera">
-        </div>
-      </div>
-      <div id="showMoreBoxId" class="showMoreBox">
-        <div class="price-calc-wrapper">
-          <div class="calcFormInput doorbellclass numberSpinner">
-            <input readonly id="doorbell" type="text" value="0" name="doorbell">
-          </div>
-
-        </div>
-        <div class="price-calc-wrapper">
-          <div class="calcFormInput smartmirrorclass numberSpinner">
-            <input readonly id="smartmirror" type="text" value="0" name="smartmirror">
-          </div>
-          <div class="calcFormInput smartbedclass float-left float-sm-right float-md-right float-lg-right numberSpinner">
-            <input readonly id="smartbed" type="text" value="0" name="smartbed">
-          </div>
-        </div>
-        <div class="price-calc-wrapper">
-          <div class="calcFormInput smartkitchenclass numberSpinner">
-            <input readonly id="smartkitchen" type="text" value="0" name="smartkitchen">
-          </div>
-          <div class="calcFormInput smartbathroomclass float-left float-sm-right float-md-right float-lg-right numberSpinner">
-            <input readonly id="smartbathroom" type="text" value="0" name="smartbathroom">
-          </div>
-        </div>
-      </div>
-      <div class="price-calc-wrapper showMoreWrapper">
-        <div id='showMoreBtn'>Show More appliances</div>
-      </div>
-      <div class="price-calc-wrapper">
-        <div class="calcFormInput techyLVL">
-          <div class="priceCalcLbl">How techy is your home?
-          <a href="/smart-home-techy-level-description" target="_blank" class="readon jcepopup" data-mediabox-width="610" data-mediabox-height="500" type="text/html" rel=""> (i)</a></div>
-          <input  id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="6" data-slider-step="3" data-slider-value="0"/> <div id="selectedTechyLvl">Not at All</div>
         </div>
       </div>
       <div class="price-calc-wrapper">
@@ -79,7 +45,7 @@ defined('_JEXEC') or die; ?>
           </div>
         </div>
         <div class="float-right">
-          <a class="claimDiscountActionBtn readon jcepopup" href="/claim-discount-code-form-modal" target="_blank" data-mediabox-width="610" data-mediabox-height="500">Claim 10% Discount</a>
+          <a class="claimDiscountActionBtn readon jcepopup" href="/claim-discount-code-form-modal" target="_blank" data-mediabox-width="610" data-mediabox-height="500">More Smart Home Options...</a>
         </div>
       </div>
 
@@ -118,7 +84,7 @@ defined('_JEXEC') or die; ?>
             });
         </script>
         <script>
-            jQuery("input[name='doorlock']").TouchSpin({
+            jQuery("input[name='switch']").TouchSpin({
                 min: 0,
                 max: 50,
                 step: 1,
@@ -126,6 +92,17 @@ defined('_JEXEC') or die; ?>
                 boostat: 5,
                 maxboostedstep: 10,
                 prefix: 'Door Lock'
+            });
+        </script>
+        <script>
+            jQuery("input[name='plugin']").TouchSpin({
+                min: 0,
+                max: 50,
+                step: 1,
+                decimals: 0,
+                boostat: 5,
+                maxboostedstep: 10,
+                prefix: 'Washer / Dryer'
             });
         </script>
         <script>
@@ -214,17 +191,19 @@ bedNum=0;
 doorBellNum=0;
 thermostatNum=0
 soundsysNum=0;
-doorBellNum=0;
+switchNum=0;
 blindNum=0;
+pluginNum=0;
 bathNum=0
 kitchenNum=0;
 secCameraNum=0
 calculatedPrice=0;
 pricePerBulb=45;
 pricePerThermostat=200;
-pricePerDoorBell=45;
+pricePerSwitch=45;
 pricePerBlind=1000;
 pricePerSoundSys=500;
+pricePerPlugin=45;
 pricePerDoorBell=100;
 pricePerSecCamera=90;
 pricePerMirror=400;
@@ -284,6 +263,10 @@ jQuery(".blindclass").on("click", function () {
     blindNum = jQuery('#blinds').val();
     calculatedPrice=calcFinalPrice();
 });
+jQuery(".pluginclass").on("click", function () {
+    pluginNum = jQuery('#plugin').val();
+    calculatedPrice=calcFinalPrice();
+});
 jQuery(".soundsysclass").on("click", function () {
     soundsysNum = jQuery('#soundsys').val();
     calculatedPrice=calcFinalPrice();
@@ -292,8 +275,8 @@ jQuery(".thermostatclass").on("click", function () {
     thermostatNum = jQuery('#thermostat').val();
     calculatedPrice=calcFinalPrice();
 });
-jQuery(".doorbellclass").on("click", function () {
-    doorBellNum = jQuery('#doorbell').val();
+jQuery(".switchclass").on("click", function () {
+    switchNum = jQuery('#switch').val();
     calculatedPrice=calcFinalPrice();
 });
 jQuery(".seccameraclass").on("click", function () {
@@ -333,7 +316,7 @@ jQuery("#showMoreBtn").on("click", function () {
 });
 
 function calcFinalPrice(){
-  finalVal=(pricePerBath*bathNum+pricePerKitchen*kitchenNum+pricePerBed*bedNum+mirrorNum*pricePerMirror+pricePerDoorBell*doorBellNum+pricePerSecCamera*secCameraNum+bulbNum*pricePerBulb+thermostatNum*pricePerThermostat+soundsysNum*pricePerSoundSys+pricePerDoorBell*doorbellNum+blindNum*pricePerBlind);
+  finalVal=(pricePerBath*bathNum+pricePerKitchen*kitchenNum+pricePerBed*bedNum+mirrorNum*pricePerMirror+pricePerDoorBell*doorBellNum+pricePerSecCamera*secCameraNum+pricePerPlugin*pluginNum+bulbNum*pricePerBulb+thermostatNum*pricePerThermostat+soundsysNum*pricePerSoundSys+pricePerSwitch*switchNum+blindNum*pricePerBlind);
   if(techyLVL==3){
     finalVal=finalVal*.5;
   } else if (techyLVL==6){

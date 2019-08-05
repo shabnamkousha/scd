@@ -1363,11 +1363,11 @@ opacity: 0;
 .tooltip-arrow{position:absolute;width:0;height:0;border-color:transparent;border-style:solid}
 .tooltip.top .tooltip-arrow{bottom:0;left:50%;margin-left:-5px;border-width:5px 5px 0;border-top-color:#000}
 
-.blindclass, .soundsysclass, .pluginclass, .seccameraclass, .smartbedclass, .smartbathroomclass{
+.blindclass, .soundsysclass,.doorlockclass, .pluginclass, .seccameraclass, .smartbedclass, .smartbathroomclass{
   width:224px;
   margin-left: 10px;
 }
-.thermostatclass, .bulbclass, .doorbellclass, .smartmirrorclass, .smartkitchenclass{
+.thermostatclass, .tvclass, .bulbclass, .doorbellclass, .smartmirrorclass, .smartkitchenclass{
   width:224px;
 }
 
@@ -1417,6 +1417,7 @@ opacity: 0;
   font-size:14px;
   margin-bottom:5px;
 }
+
 .techyLVL{
   margin-top:6px;
   width:100%;
@@ -1467,6 +1468,10 @@ opacity: 0;
     min-height:100%;
     font-size:16px;
     overflow:auto;
+}
+.disclaimer{
+  font-size:12px!important;
+  margin-bottom: 15px;
 }
 #rooms:focus, #diningroom:focus, #washrooms:focus, #balconies:focus,#entrancedoor:focus{
     border-color: #cccccc!important;
