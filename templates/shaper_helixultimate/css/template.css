@@ -1460,18 +1460,24 @@ opacity: 0;
   text-align: center;
   padding:9px;
 }
-
+.havedeviceslbl{
+  padding-top:5px;
+  margin-right:5px;
+  font-size: 12px;
+}
+.havedevicesswitch{
+}
 .priceBox{
     width: auto;
-    margin-top: 8px;
     border-radius: .25rem;
     min-height:100%;
     font-size:16px;
     overflow:auto;
+    margin-top:-7px;
 }
 .disclaimer{
   font-size:12px!important;
-  margin-bottom: 9px;
+  margin-bottom: 15px;
   margin-top: 5px;
 }
 .disclaimer2{
@@ -1488,7 +1494,6 @@ input[readonly] {
 }
 .priceBoxLbl, .priceBoxVal{
   display:block;
-  margin-top:10px;
 }
 .priceBoxTxt{
   display:block;
