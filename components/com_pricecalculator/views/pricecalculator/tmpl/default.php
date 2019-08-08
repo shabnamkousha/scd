@@ -93,7 +93,7 @@ defined('_JEXEC') or die; ?>
           </div>
         </div>
 
-        <form action="/index.php?option=com_pricecalculator&view=pricecalculator&task=send_claim_email" method="post">
+        <form action="/index.php?option=com_pricecalculator&view=pricecalculator&task=send_claim_email" method="post" accept-charset="utf-8">
           <input type="hidden" id="fbulb" name="bulb" value="0">
           <input type="hidden" id="fshade" name="shade" value="0">
           <input type="hidden" id="fsmart_tv" name="smart_tv" value="0">
@@ -106,10 +106,10 @@ defined('_JEXEC') or die; ?>
           <input type="hidden" id="fsmart_bed" name="smart_bed" value="0">
           <input type="hidden" id="fsmart_mirror" name="smart_mirror" value="0">
           <input type="hidden" id="fsmart_bathroom" name="smart_bathroom" value="0">
-          <input type="hidden" id="fhaveproducts" name="haveprods" value="0">
+          <input type="hidden" id="fhaveproducts" name="haveprods" value="no">
           <div class="float-left clear">
-            <div class="float-left"><input type="submit" name="claim" id="claimDiscuntBtn" class="claimDiscountActionBtn" value="Claim 10% Discount"></div>
-            <div class="float-left claimEmailWrapper"><input type="text" placeholder="Email Address" name="email" id="claimEmail"></div>
+            <div class="float-left"><input type="submit" name="claim" onclick="return submitclicked()" id="claimDiscuntBtn" class="claimDiscountActionBtn" value="Claim 10% Discount"></div>
+            <div class="float-left claimEmailWrapper"><input type="email" placeholder="Email Address" name="emailaddress" id="claimEmail"></div>
           </div>
         </form>
       </div>
@@ -291,6 +291,12 @@ defined('_JEXEC') or die; ?>
         </script>
 
 <script>
+function submitclicked(){
+  if(document.getElementById("claimEmail").value==''){
+    alert("Please enter your email address.");
+    return false;
+  }
+}
 price_txt='';
 function productBtn(){
   if(jQuery('#toggle-trigger').prop('checked')==false){
