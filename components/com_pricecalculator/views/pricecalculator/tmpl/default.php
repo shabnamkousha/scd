@@ -9,6 +9,31 @@
 
 // No direct access to this file
 defined('_JEXEC') or die('Restricted access');
+$smart_bulb="0";
+$smart_shade="0";
+$smart_thermostat="0";
+$entertainment_sys="0";
+$smart_door_bell="0";
+$security_camera="0";
+if(isset($_GET["smart_bulb"])){
+  $smart_bulb=$_GET["smart_bulb"];
+}
+if(isset($_GET["smart_shade"])){
+$smart_shade=$_GET["smart_shade"];
+}
+if(isset($_GET["smart_thermostat"])){
+  $smart_thermostat=$_GET["smart_thermostat"];
+}
+if(isset($_GET["entertainment_sys"])){
+  $entertainment_sys=$_GET["entertainment_sys"];
+}
+if(isset($_GET["smart_door_bell"])){
+  $smart_door_bell=$_GET["smart_door_bell"];
+}
+if(isset($_GET["security_camera"])){
+  $security_camera=$_GET["security_camera"];
+}
+
 ?>
 <h1><?php //echo $this->msg; ?></h1>
 
@@ -34,34 +59,34 @@ defined('_JEXEC') or die; ?>
         </div>
         <div class="price-calc-wrapper">
           <div class="calcFormInput bulbclass numberSpinner">
-            <input readonly id="bulbs" type="text" value="0" name="bulbs">
+            <input readonly id="bulbs" type="text" value="<?php echo $smart_bulb; ?>" name="bulbs">
           </div>
           <div class="calcFormInput blindclass float-left float-sm-right float-md-right float-lg-right numberSpinner">
-            <input readonly id="blinds" type="text" value="0" name="blind">
+            <input readonly id="blinds" type="text" value="<?php echo $smart_shade; ?>" name="blind">
           </div>
         </div>
         <div class="price-calc-wrapper">
           <div class="calcFormInput tvclass numberSpinner">
-            <input readonly id="tv" type="text" value="0" name="tv">
+            <input readonly id="tv" type="text" value="<?php echo $entertainment_sys; ?>" name="tv">
           </div>
           <div class="calcFormInput soundsysclass float-left float-sm-right float-md-right float-lg-right numberSpinner">
-            <input readonly id="soundsys" type="text" value="0" name="soundsys">
+            <input readonly id="soundsys" type="text" value="<?php echo $entertainment_sys; ?>" name="soundsys">
           </div>
         </div>
         <div class="price-calc-wrapper">
           <div class="calcFormInput thermostatclass numberSpinner">
-            <input readonly id="thermostat" type="text" value="0" name="thermostat">
+            <input readonly id="thermostat" type="text" value="<?php echo $smart_thermostat; ?>" name="thermostat">
           </div>
           <div class="calcFormInput seccameraclass float-left float-sm-right float-md-right float-lg-right numberSpinner">
-            <input readonly id="seccamera" type="text" value="0" name="seccamera">
+            <input readonly id="seccamera" type="text" value="<?php echo $security_camera; ?>" name="seccamera">
           </div>
         </div>
         <div class="price-calc-wrapper">
           <div class="calcFormInput doorbellclass numberSpinner">
-            <input readonly id="doorbell" type="text" value="0" name="doorbell">
+            <input readonly id="doorbell" type="text" value="<?php echo $smart_door_bell; ?>" name="doorbell">
           </div>
           <div class="calcFormInput doorlockclass float-left float-sm-right float-md-right float-lg-right numberSpinner">
-            <input readonly id="doorlock" type="text" value="0" name="doorlock">
+            <input readonly id="doorlock" type="text" value="<?php echo $smart_door_bell; ?>" name="doorlock">
           </div>
         </div>
         <div class="price-calc-wrapper">
