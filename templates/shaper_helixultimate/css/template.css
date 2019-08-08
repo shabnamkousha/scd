@@ -1511,6 +1511,7 @@ input[readonly] {
 }
 .comPriceCalc .price-calc-wrapper{
   margin-left: 0px;
+  width:100%;
 }
 
 .priceCalcTitle{
@@ -1536,7 +1537,48 @@ input[readonly] {
 /*
 End of Price Calc
 */
+@media (max-width: 704px) {
+  .comPriceCalc{
+    width:92%;
+    margin: 0 auto;
+  }
+  .claimEmailWrapper{
+    margin-left: 0px;
+    margin-top:10px;
+  }
+}
+
+@media (max-width: 527px) {
+  .blindclass, .soundsysclass,.doorlockclass, .pluginclass, .seccameraclass, .smartbedclass, .smartbathroomclass{
+    margin-left: 0px;
+    width:230px;
+    margin-top:5px;
+  }
+  .thermostatclass, .tvclass, .bulbclass, .doorbellclass, .smartmirrorclass, .smartkitchenclass{
+    margin-top:5px;
+    width:230px;
+  }
+  .claimEmailWrapper #claimEmail{
+    width:309px;
+  }
+  .priceBox{
+    margin-top:0px
+  }
+  .havedeviceslbl{
+    margin-top: 15px;
+    margin-bottom:5px;
+  }
+  .havedevicesswitch{
+    margin-top: 11px
+  }
+}
+
 @media (min-width: 576px) {
+  .sp-menu-full.container {
+    width: 540px;
+  }
+}
+@media (min-width: 545px) {
   .sp-menu-full.container {
     width: 540px;
   }
