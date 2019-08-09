@@ -21,7 +21,7 @@ class PriceCalculatorController extends JControllerLegacy
 
     $input = JFactory::getApplication()->input;
     $post_array = $input->getArray($_POST);
-
+//var_dump($post_array); exit();
     $input = JFactory::getApplication()->input;
 
     if($post_array['emailaddress']==''){

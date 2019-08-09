@@ -2,331 +2,123 @@
 // No direct access
 defined('_JEXEC') or die; ?>
 <?php //echo $hello; ?>
-    <script src="http://seiyria.com/bootstrap-slider/js/bootstrap-slider.js"></script>
-    <script src="/templates/shaper_helixultimate/js/jquery.bootstrap-touchspin.js"></script>
-    <link href="/templates/shaper_helixultimate/css/jquery.bootstrap-touchspin.css" rel="stylesheet">
-    <link href="/templates/shaper_helixultimate/js/test.css" rel="stylesheet">
-    <link href="http://seiyria.com/bootstrap-slider/css/bootstrap-slider.css" rel="stylesheet">
-
+  <div class="modCalc">
         <div class="priceCalcTitle">
-          Smart Home Price Calculator<a style="font-size:14px;" href="/smart-home-techy-level-description" target="_blank" class="readon jcepopup" data-mediabox-width="610" data-mediabox-height="500" type="text/html" rel=""> (i)</a>
+          Smart Home Price Calculator
           <div class="priceSubTitle">
-            Estimated prices include a consultation, installation and a Google Home or Alexa.
+            Estimated price includes smart products, installation and a Google Home or Alexa.
           </div>
         </div>
         <div class="price-calc-wrapper">
-          <div class="calcFormInput bulbclass numberSpinner">
-            <input readonly id="bulbs" type="text" value="0" name="bulbs">
+          <div class="calcFormInput bulbclass">
+            <input id="bulbs" data-prefix="Bulb" type="number" value="0" min="0" max="200" step="1" name="bulbs"/>
           </div>
-          <div class="calcFormInput blindclass float-left float-sm-right float-md-right float-lg-right numberSpinner">
-            <input readonly id="blinds" type="text" value="0" name="blind">
+          <div class="calcFormInput blindclass float-left float-sm-right float-md-right float-lg-right">
+            <input id="blinds" data-prefix="Shade / Blind" type="number" value="0" min="0" max="100" step="1" name="blind"/>
           </div>
-      </div>
-      <div class="price-calc-wrapper">
-        <div class="calcFormInput thermostatclass numberSpinner">
-          <input readonly id="thermostat" type="text" value="0" name="thermostat">
         </div>
-        <div class="calcFormInput soundsysclass float-left float-sm-right float-md-right float-lg-right numberSpinner">
-          <input readonly id="soundsys" type="text" value="0" name="soundsys">
+        <div class="price-calc-wrapper">
+          <div class="calcFormInput thermostatclass">
+            <input id="thermostat" data-prefix="Thermostat" type="number" value="0" min="0" max="20" step="1" name="thermostat"/>
+          </div>
+          <div class="calcFormInput soundsysclass float-left float-sm-right float-md-right float-lg-right">
+            <input id="soundsys" data-prefix="TV & Sound Sys" type="number" value="0" min="0" max="20" step="1" name="soundsys"/>
+          </div>
         </div>
-      </div>
-      <div class="price-calc-wrapper">
-        <div class="calcFormInput doorbellclass numberSpinner">
-          <input readonly id="doorbell" type="text" value="0" name="doorbell">
+        <div class="price-calc-wrapper">
+          <div class="calcFormInput doorbellclass">
+            <input id="doorlock" data-prefix="Door Lock & Bell" type="number" value="0" min="0" max="20" step="1" name="doorlock"/>
+          </div>
+          <div class="calcFormInput seccameraclass float-left float-sm-right float-md-right float-lg-right">
+            <input id="seccamera" data-prefix="Security Camera" type="number" value="0" min="0" max="20" step="1" name="seccamera"/>
+          </div>
         </div>
-        <div class="calcFormInput seccameraclass float-left float-sm-right float-md-right float-lg-right numberSpinner">
-          <input readonly id="seccamera" type="text" value="0" name="seccamera">
-        </div>
-      </div>
+
+
+
+
       <div class="price-calc-wrapper">
         <div class="priceBox float-left">
           <div style="width:100%">
-            <div class="float-left priceBoxLbl"><b>Price starting from</b></div> <div class="float-left priceBoxVal" id="exactPriceVal">...</div>
+            <div class="float-left priceBoxLbl"><b>Price starting from</b></div> <div class="float-left priceBoxVal" id="frontExactPriceVal">...</div>
           </div>
         </div>
-        <div class="float-right">
-          <a class="claimDiscountActionBtn readon jcepopup" href="/claim-discount-code-form-modal" target="_blank" data-mediabox-width="610" data-mediabox-height="500">More Smart Home Options...</a>
+        <div class="float-right claimDiscountActionBtnWrapper">
+          <a class="claimDiscountActionBtn" id="claimDiscounntBtnId" href="/" onclick="clickedMoreOptionBtn()">More Smart Home Options...</a>
         </div>
       </div>
+    </div>
 
-
-        <script>
-            jQuery("input[name='bulbs']").TouchSpin({
-                min: 0,
-                max: 35,
-                step: 1,
-                decimals: 0,
-                boostat: 5,
-                maxboostedstep: 10,
-                prefix: 'Light Bulb'
-            });
-        </script>
-        <script>
-            jQuery("input[name='blind']").TouchSpin({
-                min: 0,
-                max: 25,
-                step: 1,
-                decimals: 0,
-                boostat: 5,
-                maxboostedstep: 10,
-                prefix: 'Shade / Blind'
-            });
-        </script>
-        <script>
-            jQuery("input[name='thermostat']").TouchSpin({
-                min: 0,
-                max: 5,
-                step: 1,
-                decimals: 0,
-                boostat: 5,
-                maxboostedstep: 10,
-                prefix: 'Thermostat'
-            });
-        </script>
-        <script>
-            jQuery("input[name='switch']").TouchSpin({
-                min: 0,
-                max: 50,
-                step: 1,
-                decimals: 0,
-                boostat: 5,
-                maxboostedstep: 10,
-                prefix: 'Door Lock'
-            });
-        </script>
-        <script>
-            jQuery("input[name='plugin']").TouchSpin({
-                min: 0,
-                max: 50,
-                step: 1,
-                decimals: 0,
-                boostat: 5,
-                maxboostedstep: 10,
-                prefix: 'Washer / Dryer'
-            });
-        </script>
-        <script>
-            jQuery("input[name='soundsys']").TouchSpin({
-                min: 0,
-                max: 5,
-                step: 1,
-                decimals: 0,
-                boostat: 5,
-                maxboostedstep: 10,
-                prefix: 'Entertainment'
-            });
-        </script>
-        <script>
-            jQuery("input[name='seccamera']").TouchSpin({
-                min: 0,
-                max: 5,
-                step: 1,
-                decimals: 0,
-                boostat: 5,
-                maxboostedstep: 10,
-                prefix: 'Security Camera'
-            });
-        </script>
-        <script>
-            jQuery("input[name='doorbell']").TouchSpin({
-                min: 0,
-                max: 5,
-                step: 1,
-                decimals: 0,
-                boostat: 5,
-                maxboostedstep: 10,
-                prefix: 'Door Bell'
-            });
-        </script>
-        <script>
-            jQuery("input[name='smartbed']").TouchSpin({
-                min: 0,
-                max: 5,
-                step: 1,
-                decimals: 0,
-                boostat: 5,
-                maxboostedstep: 10,
-                prefix: 'Smart Bed'
-            });
-        </script>
-        <script>
-            jQuery("input[name='smartmirror']").TouchSpin({
-                min: 0,
-                max: 5,
-                step: 1,
-                decimals: 0,
-                boostat: 5,
-                maxboostedstep: 10,
-                prefix: 'Smart Mirror'
-            });
-        </script>
-        <script>
-            jQuery("input[name='smartkitchen']").TouchSpin({
-                min: 0,
-                max: 5,
-                step: 1,
-                decimals: 0,
-                boostat: 5,
-                maxboostedstep: 10,
-                prefix: 'Smart Kitchen'
-            });
-        </script>
-        <script>
-            jQuery("input[name='smartbathroom']").TouchSpin({
-                min: 0,
-                max: 5,
-                step: 1,
-                decimals: 0,
-                boostat: 5,
-                maxboostedstep: 10,
-                prefix: 'Smart Bathroom'
-            });
-        </script>
+<script src="/spinner/src/bootstrap-input-spinner.js"></script>
 
 <script>
+price_txt="";
 techyLVL=0;
 bulbNum=0;
-mirrorNum=0;
-bedNum=0;
-doorBellNum=0;
+doorlockNum=0;
 thermostatNum=0
 soundsysNum=0;
-switchNum=0;
 blindNum=0;
-pluginNum=0;
-bathNum=0
-kitchenNum=0;
-secCameraNum=0
+secCameraNum=0;
 calculatedPrice=0;
-pricePerBulb=45;
-pricePerThermostat=200;
-pricePerSwitch=45;
-pricePerBlind=1000;
-pricePerSoundSys=500;
-pricePerPlugin=45;
-pricePerDoorBell=100;
+pricePerBulb=30;
+pricePerThermostat=150;
+pricePerBlind=700;
+pricePerSoundSys=1000; //with TV
 pricePerSecCamera=90;
-pricePerMirror=400;
-pricePerBed=800;
-pricePerKitchen=2000;
-pricePerBath=1000;
+pricePerDoorLock=200; //lock+bell
+
+
 // With JQuery
-jQuery('#ex1').slider({
-	formatter: function(value) {
-    //console.log(value);
-    techyLVL=value;
-    if(value<3){
-      //jQuery(slider-selection).css("background-color":"#000");
-      jQuery('.slider-handle').css({"background":"#6699FF"});
-      jQuery('.slider-selection').css({"background":"#6699FF"});
-      packagename="Not at All";
-      jQuery("#selectedTechyLvl").text("Not at All");
-      jQuery('#selectedTechyLvl').css({"color":"#6699FF"});
 
-    }
-    if(3==value){
-      //jQuery(slider-selection).css("background-color":"#000");
-      jQuery('.slider-handle').css({"background":"#F0E68C"});
-      jQuery('.slider-selection').css({"background":"#F0E68C"});
-      packagename="Somewhat";
-      jQuery("#selectedTechyLvl").text("Somewhat");
-      jQuery('#selectedTechyLvl').css({"color":"#F0E68C"});
+var param=['','','','','','']
+param[0]="smart_bulb=".concat(bulbNum);
+param[1]="&smart_shade=".concat(blindNum);
+param[2]="&smart_thermostat=".concat(thermostatNum);
+param[3]="&entertainment_sys=".concat(soundsysNum);
+param[4]="&security_camera=".concat(secCameraNum);
+param[5]="&smart_door_bell=".concat(doorlockNum);
+console.log(param.join(''));
 
-    }
+jQuery("input[type='number']").inputSpinner();
+jQuery(".btn-outline-secondary").on("touchstart click", function(){
+  //console.log("The paragraph was clicked.");
+  bulbNum = document.getElementById('bulbs').value;
+  blindNum = document.getElementById('blinds').value;
+  doorlockNum =document.getElementById('doorlock').value;
+  soundsysNum =document.getElementById('soundsys').value;
+  thermostatNum =document.getElementById('thermostat').value;
+  secCameraNum =document.getElementById('seccamera').value;
 
-    if(6==value){
-      //jQuery(slider-selection).css("background-color":"#000");
-      jQuery('.slider-handle').css({"background":"#377E22"});
-      jQuery('.slider-selection').css({"background":"#377E22"});
-      packagename="To a Great Extent";
-      jQuery("#selectedTechyLvl").text("To a Great Extent");
-      jQuery('#selectedTechyLvl').css({"color":"#377E22"});
-
-    }
-    calculatedPrice=calcFinalPrice();
-		return '' + packagename;
-	}
-});
-
-jQuery('input').keydown(function(e) {
-   e.preventDefault();
-   return false;
+  param[0]="&smart_bulb=".concat(bulbNum);
+  param[1]="&smart_shade=".concat(blindNum);
+  param[2]="&smart_thermostat=".concat(thermostatNum);
+  param[3]="&entertainment_sys=".concat(soundsysNum);
+  param[4]="&security_camera=".concat(secCameraNum);
+  param[5]="&smart_door_bell=".concat(doorlockNum);
+  calculatedPrice=calcFinalPrice();
 });
 
 
+function clickedMoreOptionBtn(){
+  url_main_part="/index.php?option=com_pricecalculator";
+  url=url_main_part.concat(param.join(''));
+  document.getElementById("claimDiscounntBtnId").href=url;
+}
 
-jQuery(".bulbclass").on("click", function () {
-    bulbNum = jQuery('#bulbs').val();
-    calculatedPrice=calcFinalPrice();
-});
-jQuery(".blindclass").on("click", function () {
-    blindNum = jQuery('#blinds').val();
-    calculatedPrice=calcFinalPrice();
-});
-jQuery(".pluginclass").on("click", function () {
-    pluginNum = jQuery('#plugin').val();
-    calculatedPrice=calcFinalPrice();
-});
-jQuery(".soundsysclass").on("click", function () {
-    soundsysNum = jQuery('#soundsys').val();
-    calculatedPrice=calcFinalPrice();
-});
-jQuery(".thermostatclass").on("click", function () {
-    thermostatNum = jQuery('#thermostat').val();
-    calculatedPrice=calcFinalPrice();
-});
-jQuery(".switchclass").on("click", function () {
-    switchNum = jQuery('#switch').val();
-    calculatedPrice=calcFinalPrice();
-});
-jQuery(".seccameraclass").on("click", function () {
-    secCameraNum = jQuery('#seccamera').val();
-    calculatedPrice=calcFinalPrice();
-});
-jQuery(".doorbellclass").on("click", function () {
-    doorBellNum = jQuery('#doorbell').val();
-    calculatedPrice=calcFinalPrice();
-});
-jQuery(".smartbedclass").on("click", function () {
-    bedNum = jQuery('#smartbed').val();
-    calculatedPrice=calcFinalPrice();
-});
-jQuery(".smartmirrorclass").on("click", function () {
-    mirrorNum = jQuery('#smartmirror').val();
-    calculatedPrice=calcFinalPrice();
-});
-jQuery(".smartkitchenclass").on("click", function () {
-    kitchenNum = jQuery('#smartkitchen').val();
-    calculatedPrice=calcFinalPrice();
-});
-jQuery(".smartbathroomclass").on("click", function () {
-    bathNum = jQuery('#smartbathroom').val();
-    calculatedPrice=calcFinalPrice();
-});
-jQuery("#showMoreBtn").on("click", function () {
-    //jQuery('#showMoreBox').show();
-    if(document.getElementById("showMoreBoxId").style.display=="block"){
-      jQuery("#showMoreBtn").text("Show More Appliances");
-    } else {
-      jQuery("#showMoreBtn").text("Show Less Appliances");
-    }
-    jQuery("#showMoreBoxId").slideToggle("slow");
-
-
-});
 
 function calcFinalPrice(){
-  finalVal=(pricePerBath*bathNum+pricePerKitchen*kitchenNum+pricePerBed*bedNum+mirrorNum*pricePerMirror+pricePerDoorBell*doorBellNum+pricePerSecCamera*secCameraNum+pricePerPlugin*pluginNum+bulbNum*pricePerBulb+thermostatNum*pricePerThermostat+soundsysNum*pricePerSoundSys+pricePerSwitch*switchNum+blindNum*pricePerBlind);
-  if(techyLVL==3){
+  finalVal=(pricePerDoorLock*doorlockNum+pricePerSecCamera*secCameraNum+bulbNum*pricePerBulb+thermostatNum*pricePerThermostat+soundsysNum*pricePerSoundSys+blindNum*pricePerBlind);
+  if(techyLVL==2){
     finalVal=finalVal*.5;
-  } else if (techyLVL==6){
+  } else if (techyLVL==3){
     finalVal=finalVal*.3;
   }
 
   if (finalVal==0){
-    jQuery("#exactPriceVal").text('...');
+    document.getElementById("frontExactPriceVal").innerHTML='<div class="float-left">...</div>';
   } else {
-  jQuery("#exactPriceVal").text('$'.concat(Math.round(finalVal)));
+    document.getElementById("frontExactPriceVal").innerHTML='<div class="float-left finalPrice">$'.concat(Math.round(finalVal)).concat("</div>").concat(price_txt);
   }
   return finalVal;
 }

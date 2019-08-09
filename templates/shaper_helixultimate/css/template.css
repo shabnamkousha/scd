@@ -1364,11 +1364,11 @@ opacity: 0;
 .tooltip.top .tooltip-arrow{bottom:0;left:50%;margin-left:-5px;border-width:5px 5px 0;border-top-color:#000}
 
 .blindclass, .soundsysclass,.doorlockclass, .pluginclass, .seccameraclass, .smartbedclass, .smartbathroomclass{
-  width:224px;
+  width:230px;
   margin-left: 10px;
 }
 .thermostatclass, .tvclass, .bulbclass, .doorbellclass, .smartmirrorclass, .smartkitchenclass{
-  width:224px;
+  width:230px;
 }
 
 .calcFormInput .input-group-text{
@@ -1378,10 +1378,9 @@ opacity: 0;
   float:left;
 }
 .price-calc-wrapper{
-  width:96%;
+  width:100%;
   margin-bottom: 14px;
   height:40px;
-  margin-left:3%;
 }
 .claimDiscountActionBtn{
   background-color: #f50 !important;
@@ -1395,9 +1394,11 @@ opacity: 0;
   font-weight:bold;
   cursor: pointer;
   font-size:13px;
+  width: 234px;
 }
 .comPriceCalc .claimDiscountActionBtn{
   margin-top:0px!important;
+  width:auto;
 }
 .claimEmailWrapper{
   margin-left: 20px
@@ -1457,7 +1458,8 @@ opacity: 0;
 .price-calc-wrapper .input-group-text{
   display:block;
   text-align: center;
-  width:100px;
+  width:120px;
+  padding-top:9px;
 }
 .havedeviceslbl{
   padding-top:5px;
@@ -1503,7 +1505,9 @@ input[readonly] {
 .priceBoxVal{
   margin-left:5px;
 }
-
+.finalPrice{
+  width:60px;
+}
 .comPriceCalc{
   width:600px;
   margin: 0 auto;
@@ -1512,9 +1516,14 @@ input[readonly] {
   margin-left: 0px;
   width:100%;
 }
-
+#exactPriceVal{
+  width:430px;
+}
+#frontExactPriceVal{
+  width:100px;
+}
 .priceCalcTitle{
-  width:90%;
+  width:100%;
   font-weight: bold;
   margin-bottom:12px;
   font-size: 17px;
@@ -1528,6 +1537,11 @@ input[readonly] {
   margin-bottom:12px;
   font-size: 12px;
 }
+.priceAdjustment{
+  width:330px;
+  font-size: 10px;
+  margin-top:5px;
+}
 .priceBoxTxt{
   font-size: 10px;
   font-weight: normal;
@@ -1538,7 +1552,7 @@ End of Price Calc
 */
 @media (max-width: 704px) {
   .comPriceCalc{
-    width:92%;
+    width:94%;
     margin: 0 auto;
   }
   .claimEmailWrapper{
@@ -1546,16 +1560,63 @@ End of Price Calc
     margin-top:10px;
   }
 }
-
-@media (max-width: 527px) {
-  .blindclass, .soundsysclass,.doorlockclass, .pluginclass, .seccameraclass, .smartbedclass, .smartbathroomclass{
+@media (max-width: 2000px) {
+  .modCalc .blindclass{
+    margin-left: 5px;
+  }
+}
+@media (max-width: 1199px) and (min-width:1000px) {
+  .modCalc .blindclass, .modCalc .soundsysclass, .modCalc .doorlockclass, .modCalc .pluginclass, .modCalc .seccameraclass, .modCalc .smartbedclass, .modCalc .smartbathroomclass{
+    width:250px;
+    float:left!important;
     margin-left: 0px;
-    width:230px;
+    margin-top:5px;
+
+  }
+  .modCalc .thermostatclass, .modCalc .tvclass, .modCalc .bulbclass, .modCalc .doorbellclass, .modCalc .smartmirrorclass, .modCalc .smartkitchenclass{
+    margin-top:5px;
+    width:250px;
+  }
+  .modCalc .claimDiscountActionBtn{
+    margin-top:8px!important;
+  }
+  .claimDiscountActionBtnWrapper{
+    float:left!important;
+  }
+  .modCalc .priceBoxLbl{
+    margin-top: 12px;
+  }
+  .modCalc .priceBoxVal{
+    margin-top: 12px;
+  }
+}
+@media (max-width:510px) {
+  .claimDiscountActionBtnWrapper{
+    float:left!important;
+  }
+  .modCalc .claimDiscountActionBtn{
+    margin-top:5px!important;
+  }
+  .modCalc .priceBoxLbl{
+    margin-top: 12px;
+  }
+  .modCalc .priceBoxVal{
+    margin-top: 12px;
+  }
+  #exactPriceVal{
+    width:300px;
+  }
+}
+
+@media (max-width: 536px) {
+  .blindclass, .soundsysclass,.doorlockclass, .pluginclass, .seccameraclass, .smartbedclass, .smartbathroomclass{
+    margin-left: 0px!important;
+    width:240px;
     margin-top:5px;
   }
   .thermostatclass, .tvclass, .bulbclass, .doorbellclass, .smartmirrorclass, .smartkitchenclass{
     margin-top:5px;
-    width:230px;
+    width:240px;
   }
   .claimEmailWrapper #claimEmail{
     width:309px;
@@ -1618,6 +1679,9 @@ End of Price Calc
     width: 50%;
     float: left;
   }
+}
+.input-group-text{
+  background:#fff;
 }
 #offcanvas-toggler {
   display: block;
