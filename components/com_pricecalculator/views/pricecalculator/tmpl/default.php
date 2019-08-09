@@ -42,13 +42,10 @@ if(isset($_GET["security_camera"])){
 defined('_JEXEC') or die; ?>
 <?php //echo $hello; ?>
 
-    <script src="/templates/shaper_helixultimate/js/jquery.bootstrap-touchspin.js"></script>
-    <link href="/templates/shaper_helixultimate/css/jquery.bootstrap-touchspin.css" rel="stylesheet">
     <link href="/templates/shaper_helixultimate/js/test.css" rel="stylesheet">
 
     <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.5.0/css/bootstrap4-toggle.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.5.0/js/bootstrap4-toggle.min.js"></script>
-
 
 
       <div class="comPriceCalc">
@@ -58,8 +55,8 @@ defined('_JEXEC') or die; ?>
           </div>
         </div>
         <div class="price-calc-wrapper">
-          <div class="calcFormInput bulbclass numberSpinner">
-            <input readonly id="bulbs" type="text" value="<?php echo $smart_bulb; ?>" name="bulbs">
+          <div class="calcFormInput bulbclass">
+            <input id="bulbs" data-prefix="Bulbs" type="number" value="<?php echo $smart_bulb; ?>" min="0" max="200" step="1" name="bulbs"/>
           </div>
           <div class="calcFormInput blindclass float-left float-sm-right float-md-right float-lg-right numberSpinner">
             <input readonly id="blinds" type="text" value="<?php echo $smart_shade; ?>" name="blind">
@@ -138,6 +135,21 @@ defined('_JEXEC') or die; ?>
           </div>
         </form>
       </div>
+
+
+      <script src="/spinner/src/bootstrap-input-spinner.js"></script>
+      <script>
+      jQuery("input[type='number']").inputSpinner();
+      jQuery(".btn-outline-secondary").on("touchstart click", function(){
+        //console.log("The paragraph was clicked.");
+        console.log(document.getElementById('bulbs').value);
+        bulbNum = document.getElementById('bulbs').value;
+        calculatedPrice=calcFinalPrice();
+        document.getElementById("fbulb").value = bulbNum;
+      });
+
+
+      </script>
     <style>
 
     #techLVLDisplay{
@@ -182,138 +194,7 @@ defined('_JEXEC') or die; ?>
     }
     </style>
 
-        <script>
-            jQuery("input[name='bulbs']").TouchSpin({
-                min: 0,
-                max: 35,
-                step: 1,
-                decimals: 0,
-                boostat: 5,
-                maxboostedstep: 10,
-                prefix: 'Light Bulb'
-            });
-        </script>
-        <script>
-            jQuery("input[name='blind']").TouchSpin({
-                min: 0,
-                max: 25,
-                step: 1,
-                decimals: 0,
-                boostat: 5,
-                maxboostedstep: 10,
-                prefix: 'Shade / Blind'
-            });
-        </script>
-        <script>
-            jQuery("input[name='thermostat']").TouchSpin({
-                min: 0,
-                max: 5,
-                step: 1,
-                decimals: 0,
-                boostat: 5,
-                maxboostedstep: 10,
-                prefix: 'Thermostat'
-            });
-        </script>
-        <script>
-            jQuery("input[name='tv']").TouchSpin({
-                min: 0,
-                max: 5,
-                step: 1,
-                decimals: 0,
-                boostat: 5,
-                maxboostedstep: 10,
-                prefix: 'TV'
-            });
-        </script>
-        <script>
-            jQuery("input[name='soundsys']").TouchSpin({
-                min: 0,
-                max: 5,
-                step: 1,
-                decimals: 0,
-                boostat: 5,
-                maxboostedstep: 10,
-                prefix: 'Sound System'
-            });
-        </script>
-        <script>
-            jQuery("input[name='seccamera']").TouchSpin({
-                min: 0,
-                max: 5,
-                step: 1,
-                decimals: 0,
-                boostat: 5,
-                maxboostedstep: 10,
-                prefix: 'Security Camera'
-            });
-        </script>
-        <script>
-            jQuery("input[name='doorbell']").TouchSpin({
-                min: 0,
-                max: 5,
-                step: 1,
-                decimals: 0,
-                boostat: 5,
-                maxboostedstep: 10,
-                prefix: 'Door Bell'
-            });
-        </script>
-        <script>
-            jQuery("input[name='doorlock']").TouchSpin({
-                min: 0,
-                max: 5,
-                step: 1,
-                decimals: 0,
-                boostat: 5,
-                maxboostedstep: 10,
-                prefix: 'Door Lock'
-            });
-        </script>
-        <script>
-            jQuery("input[name='smartbed']").TouchSpin({
-                min: 0,
-                max: 5,
-                step: 1,
-                decimals: 0,
-                boostat: 5,
-                maxboostedstep: 10,
-                prefix: 'Smart Bed'
-            });
-        </script>
-        <script>
-            jQuery("input[name='smartmirror']").TouchSpin({
-                min: 0,
-                max: 5,
-                step: 1,
-                decimals: 0,
-                boostat: 5,
-                maxboostedstep: 10,
-                prefix: 'Smart Mirror'
-            });
-        </script>
-        <script>
-            jQuery("input[name='smartkitchen']").TouchSpin({
-                min: 0,
-                max: 5,
-                step: 1,
-                decimals: 0,
-                boostat: 5,
-                maxboostedstep: 10,
-                prefix: 'Smart Kitchen'
-            });
-        </script>
-        <script>
-            jQuery("input[name='smartbathroom']").TouchSpin({
-                min: 0,
-                max: 5,
-                step: 1,
-                decimals: 0,
-                boostat: 5,
-                maxboostedstep: 10,
-                prefix: 'Smart Bathroom'
-            });
-        </script>
+
 
 <script>
 function submitclicked(){
@@ -360,12 +241,6 @@ pricePerBed=800;
 pricePerKitchen=2000;
 pricePerBath=1000;
 
-
-jQuery(".bulbclass").on("click", function () {
-    bulbNum = jQuery('#bulbs').val();
-    calculatedPrice=calcFinalPrice();
-    document.getElementById("fbulb").value = bulbNum;
-});
 jQuery(".doorlockclass").on("click", function () {
     doorlockNum = jQuery('#doorlock').val();
     calculatedPrice=calcFinalPrice();
