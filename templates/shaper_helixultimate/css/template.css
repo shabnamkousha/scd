@@ -1559,6 +1559,9 @@ End of Price Calc
     margin-left: 0px;
     margin-top:10px;
   }
+  .priceBoxVal{
+    margin-left:0px;
+  }
 }
 @media (max-width: 2000px) {
   .modCalc .blindclass{
@@ -1633,6 +1636,13 @@ End of Price Calc
   }
 }
 
+@media (max-width: 400px) {
+  .priceAdjustment{
+    width: 310px;
+  }
+
+
+}
 @media (min-width: 576px) {
   .sp-menu-full.container {
     width: 540px;
